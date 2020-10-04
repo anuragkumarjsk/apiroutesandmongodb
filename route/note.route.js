@@ -1,16 +1,14 @@
 const notes = require('../model/note.model')
-const express= require('express')
+const express = require('express')
 const router = express.Router()
 
+router.get('/test',(req,res)=>{
+    res.json({status:"application wotking"})
+})
 router.post('/add',(req,res)=>{
-    const data={
-        name:"adventures",
-        author:"ulysess"
-    }
-    const data1=req.body
-
+   
+    var data1=req.body
     const newinst = new notes(data1)
-
     newinst.save()
     .then(()=>{console.log('new record added successfully')})
     .catch(()=>{console.log('unable to add new record' )})
@@ -27,7 +25,7 @@ router.get('/',(req,res)=>{
 router.get('/:noteId',(req,res)=>{
     //notes.findOne({_id:req.params.noteId})
     notes.findById(req.params.noteId)
-    .then((data)=>{console.log('retrieved record successfully' +res.send(data))})
+    .then((da)=>{console.log('retrieved record successfully' +res.send(da))})
     .catch(()=>{console.log('unable to retrieve record' )})
 });
 
@@ -45,8 +43,7 @@ router.delete('/delete/:noteId',(req,res)=>{
     .catch((data)=>{console.log('couldnot delete record')})
 });
 
-router.get('/check',(req,res)=>{
-    res.json({"message": "the api is working"});
-})
+
 
 module.exports = router
+                        

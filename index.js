@@ -3,7 +3,8 @@ const bodyParser = require('body-parser')
 const app = express()
 const port = 4000
 const routes = require('./route/note.route')
-
+var cors = require('cors')
+app.use(cors())
 //bodyparser gives req.body in json
 //.json and .urlencoded are the middlewares having access to req, res objects
 app.use(bodyParser.json())
@@ -21,9 +22,6 @@ console.log('connected to db successfully')
 .catch(()=>{
     console.log('unable to connect to db ')    
 })
-
-
-
 
 
 //attaching the routes folder

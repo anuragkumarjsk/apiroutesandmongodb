@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+  background-color: black;
+  height: 100vh;
+  margin-bottom: 0px;
+  border-bottom: 0px;
+}
+.for{
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tab{
+  background-color: wheat;
+  text-align: center;
+}
